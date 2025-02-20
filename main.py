@@ -35,9 +35,9 @@ class GoodIfrit:
     def __str__(self):
         """Перегрузка метода str для получения строкового представления объекта.
 
-        Возвращает строку вида "Good Ifrit <имя>, height <высота>, goodness <доброта>".
+        Возвращает строку вида "Добрый Ифрит <имя>, height <высота>, goodness <доброта>".
         """
-        return f"Good Ifrit {self._name}, height {self._height}, goodness {self._goodness}"
+        return f"Добрый Ифрит {self._name}, height {self._height}, goodness {self._goodness}"
 
     def __lt__(self, other):
         """Перегрузка оператора < для сравнения двух ифритов.
@@ -75,7 +75,7 @@ class GoodIfrit:
         return other < self or self == other
 
 # Пример использования
-gi = GoodIfrit(80, "Hazrul", 3)
+gi = GoodIfrit(80, "Серёжа", 3)
 gi.change_goodness(4)
 gil = gi + 15
 
@@ -83,8 +83,8 @@ print(gi)
 print(gil)
 print(gi(31))
 
-gi = GoodIfrit(80, "Hazrul", 3)
-gil = GoodIfrit(80, "Dalziel", 1)
+gi = GoodIfrit(80, "Серёжа", 3)
+gil = GoodIfrit(80, "Иван", 1)
 
 print(gi < gil)
 gil.change_goodness(2)
