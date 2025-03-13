@@ -1,63 +1,22 @@
 # Программирование на языке высокого уровня (Python).
-# Задание №3. Вариант 12
+# Задание №4. Вариант 12
 #
 # Выполнил: Фуфаев Н. А.
 # Группа: ПИЖ-б-о-23-2
 # E-mail: fufaevnikita2015@gmail.com
-
-
-from deposit import deposits
+from fraction import Fraction
 
 if __name__ == "__main__":
-    print("Добро пожаловать в систему подбора вкладов!")
+    f1 = Fraction(1, 2)
+    f2 = Fraction(3, 4)
 
-    while True:
-        print("\n-----")
-        print("Нажмите 1, чтобы подобрать вклад, или что угодно для выхода.")
+    print(f"f1: {f1}")
+    print(f"f2: {f2}")
+    print(f"Сумма: {f1 + f2}")
+    print(f"Разность: {f1 - f2}")
+    print(f"Произведение: {f1 * f2}")
+    print(f"Частное: {f1 / f2}")
 
-        answer = input()
-        if answer == "1":
-
-            initial_sum = float(input("1/2: Введите начальную сумму вклада: "))
-            period = int(input("2/2: Введите срок вклада (мес.): "))
-
-            matched_deposits = []
-            for deposit in deposits:
-                try:
-                    deposit._check_user_params(initial_sum, period)
-                    matched_deposits.append(deposit)
-                except AssertionError as err:
-                    pass
-
-            if len(matched_deposits) > 0:
-                print("{0:18} | {1:13} | {2:13}".format(
-                    "Вклад", "Прибыль", "Итоговая сумма"
-                ))
-                for deposit in matched_deposits:
-                    print("{0:18} | {1:8,.2f} {3:4} | {2:8,.2f} {3:4}".format(
-                          deposit.name,
-                          deposit.get_profit(initial_sum, period),
-                          deposit.get_sum(initial_sum, period),
-                          deposit.currency))
-            else:
-                print("К сожалению, нет подходящих Вам вкладов.")
-
-        else:
-            break
-
-    print("\nСпасибо, что воспользовались терминалом банка! До встречи!")
-
-# -------------
-# Пример вывода (файл):
-#
-# Добро пожаловать в систему подбора вкладов!
-#
-# -----
-# Нажмите 1, чтобы подобрать вклад, или что угодно для выхода.
-# 1
-# 1/2: Введите начальную сумму вклада: 1000
-# 2/2: Введите срок вклада (мес.): 12
-# Вклад              | Прибыль       | Итоговая сумма
-# Сохраняй           |    50.00 руб. | 1,050.00 руб.
-# Бонусный           |    50.00 руб. | 1,050.00 руб.
-# С капитализацией   |    51.16 руб. | 1,051.16 руб.
+    f1.save("fraction.json")
+    f3 = Fraction.load("fraction.json")
+    print(f"Загруженная дробь: {f3}")
