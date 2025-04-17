@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Nikita/source/repos/labwork2/build/cmake_install.cmake",
+		"C:/Users/Nikita/source/repos/labwork2/build/lib/cmake_install.cmake",
+		"C:/Users/Nikita/source/repos/labwork2/build/bin/cmake_install.cmake",
+		"C:/Users/Nikita/source/repos/labwork2/build/tests/cmake_install.cmake",
+		"C:/Users/Nikita/source/repos/labwork2/build/_deps/googletest-build/cmake_install.cmake",
+		"C:/Users/Nikita/source/repos/labwork2/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"C:/Users/Nikita/source/repos/labwork2/build/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

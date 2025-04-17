@@ -1,0 +1,3 @@
+C:/Users/Nikita/source/repos/labwork2/lib/out/build/x64-Debug/CMakeFiles/number.dir
+C:/Users/Nikita/source/repos/labwork2/lib/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Nikita/source/repos/labwork2/lib/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
