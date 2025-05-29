@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/Nikita/source/repos/labwork2/build/tests/number_tests[1]_tests.cmake")
+  include("C:/Users/Nikita/source/repos/labwork2/build/tests/number_tests[1]_tests.cmake")
+else()
+  add_test(number_tests_NOT_BUILT number_tests_NOT_BUILT)
+endif()
