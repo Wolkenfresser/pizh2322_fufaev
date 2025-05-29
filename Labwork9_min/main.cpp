@@ -58,7 +58,6 @@ class Result {
     string name;
 public:
     Result(T s, string n) : score(s), name(n) {}
-    Result operator+(const Result& other) { return Result(score + other.score, name + " & " + other.name); }
     friend ostream& operator<<(ostream& os, const Result& r) { return os << r.name << ": " << r.score; }
 };
 
@@ -79,10 +78,11 @@ public:
 };
 
 int main() {
-    Test test("Math", "Hard");
-    test.addQuestion("What is 2+2?", "4", 10, 0);
-    test.addMCQ("What is 2+2?", { "A) 1", "B) 2", "C) 3", "D) 4" }, 3, 15, 1);
-    Result<int> r1(test.calculateTotalScore(), "John"), r2(20, "Jane");
-    cout << "R1: " << r1 << "\nR2: " << r2 << "\nCombined: " << (r1 + r2) << endl;
+    Test* test = new Test("Math", "Hard");
+    test->addQuestion("What is 2+2?", "4", 10, 0);
+    test->addMCQ("What is 2+2?", { "A) 1", "B) 2", "C) 3", "D) 4" }, 3, 15, 1);
+    Result<int> result(test->calculateTotalScore(), "John");
+    cout << result << endl;
+    delete test;
     return 0;
 }
